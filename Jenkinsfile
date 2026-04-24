@@ -39,7 +39,7 @@ pipeline {
 
                 sshagent(['tomcat-ssh-key']) {
                     sh '''
-                    scp target/*.war ubuntu@Q1_3.84.228.60:${DEPLOY_PATH}/${APP_NAME}.war
+                    scp target/*.war ubuntu@3.84.228.60:${DEPLOY_PATH}/${APP_NAME}.war
                     ssh ubuntu@Q1_3.84.228.60 "sudo systemctl restart tomcat"
                     '''
                 }
@@ -58,7 +58,7 @@ pipeline {
 
                 sshagent(['tomcat-ssh-key']) {
                     sh '''
-                    scp target/*.war ubuntu@Q2_35.173.180.69:${DEPLOY_PATH}/${APP_NAME}.war
+                    scp target/*.war ubuntu@35.173.180.69:${DEPLOY_PATH}/${APP_NAME}.war
                     ssh ubuntu@Q2_35.173.180.69 "sudo systemctl restart tomcat"
                     '''
                 }
