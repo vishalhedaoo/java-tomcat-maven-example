@@ -54,7 +54,7 @@
 <body>
     <div class="container">
         <div class="icon">✅</div>
-        <h1>Deployment Successful!</h1>
+        <h1>Deployment Successful On SLAVE-1!</h1>
         <p>Your application has been deployed successfully via Jenkins CI/CD Pipeline.</p>
         <div class="build">Build Status: SUCCESS</div>
     </div>
