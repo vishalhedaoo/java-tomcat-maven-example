@@ -13,7 +13,7 @@ pipeline {
             agent { label 'master' }
 
             steps {
-                git branch: 'main', url: 'https://github.com/vishalhedaoo/java-tomcat-maven-example.git'
+                git branch: 'master', url: 'https://github.com/vishalhedaoo/java-tomcat-maven-example.git'
             }
         }
 
