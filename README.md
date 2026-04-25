@@ -75,3 +75,9 @@ The application will be available on `http://localhost:8080`.
 
 
 
+
+
+
+
+
+<img width="960" height="1280" alt="WhatsApp Image 2026-04-25 at 8 08 09 PM" src="https://github.com/user-attachments/assets/e2ec7450-096d-4ce9-91ae-12cb1013ddbf" />
