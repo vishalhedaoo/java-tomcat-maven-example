@@ -52,3 +52,26 @@ The application will be available on `http://localhost:8080`.
      </plugins>
    </build>
    ```
+
+
+
+
+
+
+
+
+
+
+
+<img width="960" height="1280" alt="WhatsApp Image 2026-04-25 at 5 16 29 PM" src="https://github.com/user-attachments/assets/f59deb60-dcd1-41f0-b91d-f49f1ad4075b" />
+
+
+
+
+
+
+
+
+
+
+
