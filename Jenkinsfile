@@ -13,7 +13,7 @@ pipeline {
             agent { label 'master' }
 
             steps {
-                git branch: 'master', url: 'https://github.com/vishalhedaoo/java-tomcat-maven-example.git'
+                git branch: 'main', url: 'https://github.com/vishalhedaoo/java-tomcat-maven-example.git'
             }
         }
 
@@ -30,17 +30,29 @@ pipeline {
             agent { label 'master' }
 
             steps {
-                sh 'aws s3 cp ${WAR_NAME} s3://${S3_BUCKET}/${WAR_NAME}'
+			
+				withCredentials([[
+						$class: 'AmazonWebServicesCredentialsBinding',
+						credentialsId: 'aws-creds'
+					]]) {
+						sh 'aws s3 cp ${WAR_NAME} s3://${S3_BUCKET}/${WAR_NAME}'
+					}
+			
             }
         }
 
-        stage('Download WAR on Slave') {
-            agent { label 'slave' }
+       stage('Download WAR on Slave') {
+			agent { label 'slave' }
 
-            steps {
-                sh 'aws s3 cp s3://${S3_BUCKET}/${WAR_NAME} ${WAR_NAME}'
-            }
-        }
+			steps {
+				withCredentials([[
+						$class: 'AmazonWebServicesCredentialsBinding',
+						credentialsId: 'aws-creds'
+					]]) {
+						sh 'aws s3 cp s3://${S3_BUCKET}/${WAR_NAME} ${WAR_NAME}'
+					}
+			}
+	}
 
         stage('Deploy to Tomcat') {
             agent { label 'slave' }
